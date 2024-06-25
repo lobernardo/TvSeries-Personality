@@ -9,10 +9,24 @@ const HomeContainer = styled.div`
   justify-content: center;
   height: 100vh;
   background-image: url("https://isquad.tv/wp-content/uploads/2018/08/Netflix-Background.jpg");
-  color: Gold;
-  font-size: 20px;
+`;
+
+const Title = styled.h1`
+  color: gold;
+  font-size: 26px;
   font-family: impact, fantasy;
-  
+  background-color: black;
+  padding:10px;
+  border-radius: 10px;
+`;
+
+const Subtitle = styled.h2`
+  color: gold;
+  font-size: 14px;
+  font-family: impact, fantasy;
+  background-color: black;
+  padding:10px;
+  border-radius: 10px;
 `;
 
 const StartButton = styled.button`
@@ -23,6 +37,10 @@ const StartButton = styled.button`
   cursor: pointer;
   margin-top: 20px;
   background-color: gold;
+  &:hover {
+    background-color: black;
+    color:gold;
+  }
 `;
 
 
@@ -35,8 +53,8 @@ const Home: React.FC = () => {
 
   return (
     <HomeContainer>
-      <h1>Sejam bem vindo(as), SérieManíac's!</h1>
-      <h2>Vamos mostrar ao mundo o seu lado secreto através de suas séries favoritas?</h2>
+      <Title><h1>Sejam bem vindo(as), SérieManíac's!</h1></Title>
+      <Subtitle><h2>Mostre quem você é realmente!</h2></Subtitle>
       <StartButton onClick={startChoosing}>Iniciar</StartButton>
     </HomeContainer>
   );

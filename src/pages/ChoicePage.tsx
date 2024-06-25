@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 const ChoiceContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -18,12 +18,36 @@ const ChoiceContainer = styled.div`
   font-family: impact, fantasy;
 `;
 
+const ChoiceCardsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top:20px;
+}
+`;
+
+const PrevButton = styled.button`
+  padding: 10px 35px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: gold;
+  &:hover {
+    background-color: gray;
+    color:gold;
+  }
+`;
+
 const ChoicePage: React.FC = () => {
   const { addChoice, choices } = useSeries();
   const navigate = useNavigate();
   const [seriesList, setSeriesList] = useState<Series[]>([]);
   const [currentPair, setCurrentPair] = useState<Series[]>([]);
 
+  
   useEffect(() => {
     fetch('https://api.tvmaze.com/shows')
       .then(response => response.json())
@@ -51,14 +75,24 @@ const ChoicePage: React.FC = () => {
     addChoice(series);
   };
 
+  const handleBackClick = () => {
+    navigate('/'); // Altere esta rota para a página desejada
+  };
+
   return (
     <ChoiceContainer>
-      <h1>Qual você prefere?</h1>
+      <h1>Qual você gosta mais/gostaria de assistir?</h1>
+      <ChoiceCardsContainer>
       {currentPair.length === 2 && currentPair.map((series) => (
         <SeriesChoice key={series.id} series={series} onChoose={handleChoice} />
       ))}
+      </ChoiceCardsContainer>
+      <PrevButton onClick={handleBackClick}>Voltar</PrevButton> 
+      
     </ChoiceContainer>
   );
+  
 };
+
 
 export default ChoicePage;

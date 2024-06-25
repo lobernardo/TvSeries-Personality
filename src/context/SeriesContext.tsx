@@ -33,7 +33,7 @@ interface SeriesContextType {
   export const useSeries = () => {
     const context = useContext(SeriesContext);
     if (!context) {
-      throw new Error('useSeries must be used within a SeriesProvider');
+      throw new Error('Solicitação errada');
     }
     return context;
   };

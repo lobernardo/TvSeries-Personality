@@ -50,7 +50,6 @@ const SeriesCard = styled.div`
   padding: 10px;
   border-radius: 8px;
   background-color: gray;
-  
 `;
 
 const SeriesImage = styled.img`

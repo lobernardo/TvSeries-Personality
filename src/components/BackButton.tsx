@@ -21,7 +21,7 @@ const BackButton: React.FC<BackButtonProps> = ({ to }) => {
           fontWeight: 'bold',
           outline: 'none',
           boxShadow: '0 2px 4px rgba(0, 123, 255, 0.2)',
-          transition: 'background-color 0.3s',
+          transition: 'background-color 0.8s',
         }}
       >
         Voltar

@@ -17,7 +17,10 @@ const SeriesCard = styled.div`
   border: 1px solid #ccc;
   border-radius: 8px;
   &:hover {
-    background-color: #f0f0f0;
+    background-color: gold;
+    transition: 0.5s;
+    transform: scale(1.10);
+    
   }
 `;
 
